@@ -6,7 +6,7 @@ import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.lang.*;
 /*
- *  Η κλάση που χειρίζεται τον κώδικα του client
+ *  The class that handles the client code
  */
 public class THClient {
     public static void main(String[] args) { 

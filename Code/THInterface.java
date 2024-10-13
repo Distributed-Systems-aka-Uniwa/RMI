@@ -3,7 +3,7 @@ import java.rmi.RemoteException;
 import java.lang.String;
 import java.util.ArrayList;
 /*
- *  Η κλάση που δίνει την αναφορά του remote object του RMI registry που σηκώνει ο server
+ *  The class that provides the reference to the remote object of the RMI registry that the server raises
  */
 public interface THInterface extends Remote {
     
@@ -25,6 +25,6 @@ public interface THInterface extends Remote {
     public ArrayList<Reservations> cancel(String hostname, String type, int number, String name, THClientInterface clientObj) 
         throws RemoteException;
     
-    public String updateServer(String upd) // Επικοινωνία από client στον server
+    public String updateServer(String upd) // Communication from client to server
         throws RemoteException;
 }

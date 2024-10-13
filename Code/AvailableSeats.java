@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.lang.*;
 import java.util.Scanner;
 /*
- *  Η κλάση με τις ζώνες των θέσεων του θεάτρου
+ *  The class with the zones of the theater seats
  */
 public class AvailableSeats implements Serializable {
     
@@ -65,10 +65,11 @@ public class AvailableSeats implements Serializable {
         this.number += number;
     }
 
-    @Override
-    public String toString() {
-        return this.number + " θέσεις " + this.description +
-            " (κωδικός: " + this.type + ") - τιμή: " + this.valuePerSeat;
-    }
+	@Override
+	public String toString() {
+		return this.number + " seats " + this.description +
+			" (code: " + this.type + ") - price: " + this.valuePerSeat;
+	}
+
 
 }

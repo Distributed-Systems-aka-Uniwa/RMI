@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.ListIterator;
 import java.util.Scanner;
+
 /*
- *  Η κλάση που δίνει την υλοποίηση του remote object του RMI registry που σηκώνει ο server
+ *  The class that provides the implementation of the remote object of the RMI registry that the server raises
  */
 public class THImpl extends UnicastRemoteObject implements THInterface {
     
@@ -30,11 +31,11 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
         zonePCCallbackClients = new ArrayList<>();
         zoneKECallbackClients = new ArrayList<>();
         zonePTHCallbackClients = new ArrayList<>();
-        this.zonePA = new AvailableSeats(100, "ΠΑ", "Πλατεία - Ζώνη Α", 45);
-        this.zonePB = new AvailableSeats(200, "ΠΒ", "Πλατεία - Ζώνη Β", 35);
-        this.zonePC = new AvailableSeats(400, "ΠΓ", "Πλατεία - Ζώνη Γ", 25);
-        this.zoneKE = new AvailableSeats(225, "ΚΕ", "Κεντρικός Εξώστης", 30);
-        this.zonePTH = new AvailableSeats(75, "ΠΘ", "Πλαϊνά Θεωρεία", 20);       
+        this.zonePA = new AvailableSeats(100, "PA", "Platia - Zone A", 45);
+        this.zonePB = new AvailableSeats(200, "PB", "Platia - Zone B", 35);
+        this.zonePC = new AvailableSeats(400, "PC", "Platia - Zone C", 25);
+        this.zoneKE = new AvailableSeats(225, "KE", "Central Balcony", 30);
+        this.zonePTH = new AvailableSeats(75, "PTH", "Side Boxes", 20);       
     }
 
     public ArrayList<AvailableSeats> list(String hostname) 
@@ -58,23 +59,23 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
 
         cost = 0;
         switch (type) {
-            case "ΠΑ" :
+            case "PA" :
                 availableSeats = returnAvailableSeats(zonePA, number, clientObj, PRINTMSGS);
                 cost = countCost(zonePA, hostname, type, availableSeats, name);
                 return cost;
-            case "ΠΒ" :
+            case "PB" :
                 availableSeats = returnAvailableSeats(zonePB, number, clientObj, PRINTMSGS);
                 cost = countCost(zonePB, hostname, type, availableSeats, name);
                 return cost;
-            case "ΠΓ" :
+            case "PC" :
                 availableSeats = returnAvailableSeats(zonePC, number, clientObj, PRINTMSGS);
                 cost = countCost(zonePC, hostname, type, availableSeats, name);
                 return cost;
-            case "ΚΕ" :
+            case "KE" :
                 availableSeats = returnAvailableSeats(zoneKE, number, clientObj, PRINTMSGS);
                 cost = countCost(zoneKE, hostname, type, availableSeats, name);
                 return cost;
-            case "ΠΘ" :
+            case "PTH" :
                 availableSeats = returnAvailableSeats(zonePTH, number, clientObj, PRINTMSGS);
                 cost = countCost(zonePTH, hostname, type, availableSeats, name);
                 return cost;
@@ -93,14 +94,14 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
                 clientObj.updateClient("Reservation Successful");
                 return availableSeats;
             } else {
-                if (PRINTMSGS == 1) { // Λόγω ότι καλείται 2 φορές η book, για να μην τυπώνεται στην οθόνη του client ξανά η ερώτηση
+                if (PRINTMSGS == 1) { // Because book is called twice, to avoid printing the question on the client's screen again
                     clientObj.updateClient("Available seats are only " + zone.getNumber() + ".\nDo you want to continue the reservation? (type yes for continue or no for stop)");
                 }
                 if (this.clientResponse.equals("yes")) {
                     availableSeats = zone.getNumber();
                     clientObj.updateClient("\nReservation Successful");
-                    this.clientResponse = ""; // Επαναφορά της ανταπόκρισης του client στο κενό σύμβολο, ώστε να μην εκτελεστεί λανθασμένα
-                    return zone.getNumber();  // κώδικας λόγω ότι το clientResponse περιέχει την απάντηση από προηγούμενη ερώτηση (Η book καλείται 2 φορές)
+                    this.clientResponse = ""; // Reset the client's response to an empty symbol, so that it does not execute incorrectly
+                    return zone.getNumber();  // code because the clientResponse contains the answer from the previous question (book is called twice)
                 } 
                 if (this.clientResponse.equals("no")) {
                     clientObj.updateClient("\nReservation Unsuccessful");
@@ -112,7 +113,7 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
         } else {
             if (PRINTMSGS == 1) { 
                 clientObj.updateClient("No available seats!");
-                clientObj.updateClient("Do you want to add you in immediate notification list, when at least 1 of your requested seats are available? (type yes for continue or no for stop)");
+                clientObj.updateClient("Do you want to add you to the immediate notification list when at least 1 of your requested seats are available? (type yes for continue or no for stop)");
             }
             if (this.clientResponse.equals("yes")) {
                 clientObj.updateClient("You have been registered for notification...");
@@ -149,31 +150,31 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
     public synchronized void registerForCallback(THClientInterface callbackClient, String type)
         throws RemoteException {
             switch (type) {
-                case "ΠΑ" :
+                case "PA" :
                     if (!zonePACallbackClients.contains(callbackClient)) {
                         zonePACallbackClients.add(callbackClient);
                     }
                     System.out.println("Registered new client of " + type);
                     break;
-                case "ΠΒ" :
+                case "PB" :
                     if (!zonePBCallbackClients.contains(callbackClient)) {
                         zonePACallbackClients.add(callbackClient);
                     }
                     System.out.println("Registered new client of " + type);
                     break;
-                case "ΠΓ" :
+                case "PC" :
                     if (!zonePCCallbackClients.contains(callbackClient)) {
                         zonePCCallbackClients.add(callbackClient);
                     }
                     System.out.println("Registered new client of " + type);
                     break;
-                case "ΚΕ" :
+                case "KE" :
                     if (!zoneKECallbackClients.contains(callbackClient)) {
                         zoneKECallbackClients.add(callbackClient);
                     }
                     System.out.println("Registered new client of " + type);
                     break;
-                case "ΠΘ" :
+                case "PTH" :
                     if (!zonePTHCallbackClients.contains(callbackClient)) {
                         zonePTHCallbackClients.add(callbackClient);
                     }
@@ -189,35 +190,35 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
 
             for (;;) {
                 switch (type) {
-                    case "ΠΑ" :
+                    case "PA" :
                         if (zonePA.getNumber() > 0) {
                             callbackClient.notifyCallbackClient(zonePA.getNumber() + " seats of type " + type + " are available!!");     
                             unregisterForCallback(callbackClient, type);
                             callbackSend = true;
                         }
                         break;
-                    case "ΠΒ" :
+                    case "PB" :
                         if (zonePB.getNumber() > 0) {
                             callbackClient.notifyCallbackClient(zonePB.getNumber() + " seats of type " + type + " are available!!");
                             unregisterForCallback(callbackClient, type);
                             callbackSend = true;
                         }
                         break;
-                    case "ΠΓ" :
+                    case "PC" :
                         if (zonePC.getNumber() > 0) {
                             callbackClient.notifyCallbackClient(zonePC.getNumber() + " seats of type " + type + " are available!!");    
                             unregisterForCallback(callbackClient, type);
                             callbackSend = true;
                         }
                         break;
-                    case "ΚΕ" :
+                    case "KE" :
                         if (zoneKE.getNumber() > 0) {
                             callbackClient.notifyCallbackClient(zoneKE.getNumber() + " seats of type " + type + " are available!!");    
                             unregisterForCallback(callbackClient, type);
                             callbackSend = true;
                         }
                         break;
-                    case "ΠΘ" :
+                    case "PTH" :
                         if (zonePTH.getNumber() > 0) {
                             callbackClient.notifyCallbackClient(zonePTH.getNumber() + " seats of type " + type + " are available!!");  
                             unregisterForCallback(callbackClient, type);
@@ -234,31 +235,31 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
     public synchronized void unregisterForCallback(THClientInterface callbackClient, String type)
         throws RemoteException {
             switch (type) {
-                case "ΠΑ" :
+                case "PA" :
                     if (zonePACallbackClients.contains(callbackClient)) {
                         zonePACallbackClients.remove(callbackClient);
                     }
                     System.out.println("Unregistered client of " + type);
                     break;
-                case "ΠΒ" :
+                case "PB" :
                     if (zonePBCallbackClients.contains(callbackClient)) {
                         zonePBCallbackClients.remove(callbackClient);
                     }
                     System.out.println("Unregistered client of " + type);
                     break;
-                case "ΠΓ" :
+                case "PC" :
                     if (zonePCCallbackClients.contains(callbackClient)) {
                         zonePCCallbackClients.remove(callbackClient);
                     }
                     System.out.println("Unregistered client of " + type);
                     break;
-                case "ΚΕ" :
+                case "KE" :
                     if (zoneKECallbackClients.contains(callbackClient)) {
                         zoneKECallbackClients.remove(callbackClient);
                     }
                     System.out.println("Unregistered client of " + type);
                     break;
-                case "ΠΘ" :
+                case "PTH" :
                     if (zonePTHCallbackClients.contains(callbackClient)) {
                         zonePTHCallbackClients.remove(callbackClient);
                     }
@@ -310,19 +311,19 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
     private void restoreSeats(String type, int number)
         throws RemoteException {
         switch (type) {
-            case "ΠΑ" :
+            case "PA" :
                 zonePA.unreserveSeats(number);
                 break;
-            case "ΠΒ" :
+            case "PB" :
                 zonePB.unreserveSeats(number);
                 break;
-            case "ΠΓ" :
+            case "PC" :
                 zonePC.unreserveSeats(number);
                 break;
-            case "ΚΕ" :
+            case "KE" :
                 zoneKE.unreserveSeats(number);
                 break;
-            case "ΠΘ" :
+            case "PTH" :
                 zonePTH.unreserveSeats(number);
                 break;
         }
@@ -339,15 +340,3 @@ public class THImpl extends UnicastRemoteObject implements THInterface {
         return clientResponse;
     }
 }
-
-   
-  
-    
-
- 
-    
-    
-
-    
-
-    

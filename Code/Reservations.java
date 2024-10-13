@@ -1,7 +1,7 @@
 import java.io.Serializable;
 import java.lang.*;
 /*
- *  Η κλάση με τα στοιχεία των κρατήσεων
+ *  The class with reservation details
  */
 public class Reservations implements Serializable {
     
@@ -58,9 +58,9 @@ public class Reservations implements Serializable {
 
     @Override
     public String toString() {
-        return "Όνομα Πελάτη  : " + this.name + "\n"
-            + "Πλήθος Θέσεων : " + this.number + "\n"
-            + "Τύπος Θέσεων  : " + this.type + "\n" 
-            + "Κόστος Θέσεων : " + this.cost + "\n";
+        return "Customer Name  : " + this.name + "\n"
+            + "Number of Seats : " + this.number + "\n"
+            + "Type of Seats   : " + this.type + "\n" 
+            + "Cost of Seats   : " + this.cost + "\n";
     }
 }

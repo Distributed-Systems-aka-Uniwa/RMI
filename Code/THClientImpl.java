@@ -1,7 +1,7 @@
 import java.rmi.*;
 import java.rmi.server.*;
 /*
- *  Η κλάση που δίνει την υλοποίηση στο remote object του client για την επικοινωνία με τον server
+ *  The class that implements the remote object of the client for communication with the server
  */
 public class THClientImpl extends UnicastRemoteObject
     implements THClientInterface {
