@@ -81,7 +81,7 @@ Start the RMI registry in a terminal:
 rmiregistry
 ```
 ### 4. Run the Theater Server
-In a new terminal, start the TheaterServer:
+In a new terminal, start the Theater Server:
 ```
 java THServer
 ```
