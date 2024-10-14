@@ -13,7 +13,7 @@ For the detailed Documentation, click the link:
 
 ## Overview
 
-This project implements a Java RMI (Remote Method Invocation) application that allows multiple clients to reserve seats for a theater performance at Theater X. The application consists of a server (TheaterServer), a client (TheaterClient), a remote interface (TheaterInterface), and the implementation of this interface (TheaterImpl). The server manages seat reservations and notifies clients of availability.
+This project implements a Java RMI (Remote Method Invocation) application that allows multiple clients to reserve seats for a theater performance at Theater X. The application consists of a server (THServer), a client (THClient), a remote interface (THInterface), and the implementation of this interface (THImpl). The server manages seat reservations and notifies clients of availability.
 
 ## Course Information
 
@@ -123,7 +123,7 @@ java THClient cancel <hostname> <type> <number> <name>
 
 ## Επισκόπηση
 
-Αυτό το έργο υλοποιεί μια εφαρμογή Java RMI (Remote Method Invocation) που επιτρέπει σε πολλούς πελάτες να κάνουν κρατήσεις θέσεων για μια παράσταση στο Θέατρο X. Η εφαρμογή αποτελείται από έναν διακομιστή (TheaterServer), έναν πελάτη (TheaterClient), μια απομακρυσμένη διεπαφή (TheaterInterface) και την υλοποίηση αυτής της διεπαφής (TheaterImpl). Ο διακομιστής διαχειρίζεται τις κρατήσεις θέσεων και ειδοποιεί τους πελάτες για την διαθεσιμότητα.
+Αυτό το έργο υλοποιεί μια εφαρμογή Java RMI (Remote Method Invocation) που επιτρέπει σε πολλούς πελάτες να κάνουν κρατήσεις θέσεων για μια παράσταση στο Θέατρο X. Η εφαρμογή αποτελείται από έναν διακομιστή (THServer), έναν πελάτη (THClient), μια απομακρυσμένη διεπαφή (THInterface) και την υλοποίηση αυτής της διεπαφής (THImpl). Ο διακομιστής διαχειρίζεται τις κρατήσεις θέσεων και ειδοποιεί τους πελάτες για την διαθεσιμότητα.
 
 ## Πληροφορίες Μαθήματος
 
