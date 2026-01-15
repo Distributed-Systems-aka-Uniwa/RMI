@@ -1,34 +1,77 @@
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/255px-Flag_of_the_United_Kingdom_%281-2%29.svg.png)
+<p align="center">
+  <img src="https://www.especial.gr/wp-content/uploads/2019/03/panepisthmio-dut-attikhs.png" alt="UNIWA" width="150"/>
+</p>
 
-# Theater Reservation System with Java RMI
+<p align="center">
+  <strong>UNIVERSITY OF WEST ATTICA</strong><br>
+  SCHOOL OF ENGINEERING<br>
+  DEPARTMENT OF COMPUTER ENGINEERING AND INFORMATICS
+</p>
 
-For the requested Assignment, click the link:  
-[Assignment](Assignment/)
+---
 
-For the Source Code, click the link:  
-[Code](Code/)
+<p align="center">
+  <strong>Distributed Systems</strong>
+</p>
 
-For the detailed Documentation, click the link:  
-[Documentation](Documentation/)
+<h1 align="center">
+  Theater Reservation System with Java RMI
+</h1>
 
-## Overview
+<p align="center">
+  <strong>Vasileios Evangelos Athanasiou</strong><br>
+  Student ID: 19390005
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ath21" target="_blank">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/vasilis-athanasiou-7036b53a4/" target="_blank">LinkedIn</a>
+</p>
+
+<p align="center">
+  Supervisor: Doka Katerina, Senior Researcher<br>
+</p>
+
+<p align="center">
+  <a href="http://www.cslab.ece.ntua.gr/~doka/" target="_blank">UNIWA Profile</a> ·
+  <a href="https://www.linkedin.com/in/kdoka/" target="_blank">LinkedIn</a>
+</p>
+
+<p align="center">
+  Athens, June 2023
+</p>
+
+---
+
+# Project Overview
 
 This project implements a Java RMI (Remote Method Invocation) application that allows multiple clients to reserve seats for a theater performance at Theater X. The application consists of a server (THServer), a client (THClient), a remote interface (THInterface), and the implementation of this interface (THImpl). The server manages seat reservations and notifies clients of availability.
 
-## Course Information
+---
 
-- **Course**: [Distributed Systems](https://ice.uniwa.gr/education/undergraduate/courses/distributed-systems/)
-- **Semester**: 6
-- **Program of Study**: [UNIWA](https://www.uniwa.gr/)
-- **Department**: [Informatics and Computer Engineering](https://ice.uniwa.gr/)
-- **Lab Instructor**: [Doka Aikaterini](http://www.cslab.ece.ntua.gr/~doka/)
-- **Academic Season**: 2022-2023
+## Table of Contents
 
-## Student Information
 
-- **Name**: Athanasiou Vasileios Evangelos
-- **Student ID**: 19390005
-- **Status**: Undergraduate
+| Section | Folder / File | Description |
+|------:|---------------|-------------|
+| 1 | `assign/` | Assignment material |
+| 1.1 | `assign/DS-LAB-ASK-2-2022-23.pdf` | Laboratory assignment description (English) |
+| 1.2 | `assign/ΚΣ-ΕΡΓΑΣΤΗΡΙΟ-ΑΣΚ-2-2022-23.pdf` | Περιγραφή εργαστηριακής άσκησης (Greek) |
+| 2 | `docs/` | Theoretical documentation |
+| 2.1 | `docs/Java-Remote-Method-Invocation.pdf` | Java RMI theory (English) |
+| 2.2 | `docs/Απομακρυσμένη-Κλήση-Μεθόδου-Java.pdf` | Απομακρυσμένη Κλήση Μεθόδου – Java (Greek) |
+| 3 | `src/` | Source code implementation |
+| 3.1 | `src/THServer.java` | Remote server main program |
+| 3.2 | `src/THImpl.java` | Remote object implementation |
+| 3.3 | `src/THInterface.java` | Remote interface definition |
+| 3.4 | `src/THClient.java` | Client main program |
+| 3.5 | `src/THClientImpl.java` | Client-side object implementation |
+| 3.6 | `src/THClientInterface.java` | Client-side interface |
+| 3.7 | `src/AvailableSeats.java` | Supporting class: seat management |
+| 3.8 | `src/Reservations.java` | Supporting class: reservation management |
+| 4 | `README.md` | Repository overview and usage instructions |
+
+---
 
 ## Key Features
 
@@ -108,112 +151,10 @@ To cancel reservations:
 java THClient cancel <hostname> <type> <number> <name>
 ```
 
-![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/255px-Flag_of_Greece.svg.png)
+---
 
-# Σύστημα Κρατήσεων Θεάτρου με Java RMI
-
-Για την ζητούμενη εργασία, κάντε κλικ στον σύνδεσμο:  
-[Assignment](Assignment/)
-
-Για τον Πηγαίο Κώδικα, κάντε κλικ στον σύνδεσμο:  
-[Code](Code/)
-
-Για την αναλυτική Τεκμηρίωση, κάντε κλικ στον σύνδεσμο:  
-[Documentation](Documentation/)
-
-## Επισκόπηση
-
-Αυτό το έργο υλοποιεί μια εφαρμογή Java RMI (Remote Method Invocation) που επιτρέπει σε πολλούς πελάτες να κάνουν κρατήσεις θέσεων για μια παράσταση στο Θέατρο X. Η εφαρμογή αποτελείται από έναν διακομιστή (THServer), έναν πελάτη (THClient), μια απομακρυσμένη διεπαφή (THInterface) και την υλοποίηση αυτής της διεπαφής (THImpl). Ο διακομιστής διαχειρίζεται τις κρατήσεις θέσεων και ειδοποιεί τους πελάτες για την διαθεσιμότητα.
-
-## Πληροφορίες Μαθήματος
-
-- **Μάθημα**: [Κατανεμημένα Συστήματα](https://ice.uniwa.gr/education/undergraduate/courses/distributed-systems/)
-- **Εξάμηνο**: 6
-- **Πρόγραμμα Σπουδών**: [ΠΑΔΑ](https://www.uniwa.gr/)
-- **Τμήμα**: [Μηχανικών Πληροφορικής και Υπολογιστών](https://ice.uniwa.gr/)
-- **Εκπαιδευτής Εργαστηρίου**: [Δόκα Αικατερίνη](http://www.cslab.ece.ntua.gr/~doka/)
-- **Ακαδημαϊκή Χρονιά**: 2022-2023
-
-## Πληροφορίες Φοιτητή
-
-- **Όνομα**: Αθανασίου Βασίλειος Ευάγγελος
-- **Αριθμός Φοιτητή**: 19390005
-- **Κατάσταση**: Προπτυχιακός Φοιτητής
-
-## Κύρια Χαρακτηριστικά
-
-- **Ταυτόχρονος Διακομιστής**: Ο διακομιστής μπορεί να χειριστεί πολλές αιτήσεις πελατών ταυτόχρονα.
-- **Διαθέσιμες Θέσεις**: Το θέατρο προσφέρει:
-  - **100 ΠΑ τύπου θέσεις** (Πλατεία - Ζώνη Α) στα **45 Ευρώ η καθεμία**
-  - **200 ΠΒ τύπου θέσεις** (Πλατεία - Ζώνη Β) στα **35 Ευρώ η καθεμία**
-  - **400 ΠΓ τύπου θέσεις** (Πλατεία - Ζώνη Γ) στα **25 Ευρώ η καθεμία**
-  - **225 ΚΕ τύπου θέσεις** (Κεντρικός Εξώστης) στα **30 Ευρώ η καθεμία**
-  - **75 ΠΘ τύπου θέσεις** (Πλαϊνά Θεωρεία) στα **20 Ευρώ η καθεμία**
-- **Εντολές Πελάτη**:
-  - **Λίστα Διαθέσιμων Θέσεων**: Οι πελάτες μπορούν να δουν όλες τις διαθέσιμες θέσεις και τις τιμές τους.
-  - **Κράτηση Θέσεων**: Οι πελάτες μπορούν να κάνουν κράτηση για έναν καθορισμένο αριθμό θέσεων.
-  - **Λίστα Κρατήσεων**: Οι πελάτες μπορούν να δουν όλες τις κρατήσεις που έχουν κάνει.
-  - **Ακύρωση Κρατήσεων**: Οι πελάτες μπορούν να ακυρώσουν τις κρατήσεις τους.
-- **Συνδρομή για Ειδοποιήσεις**: Οι πελάτες μπορούν να εγγραφούν για άμεσες ειδοποιήσεις όταν οι θέσεις γίνουν διαθέσιμες ξανά μετά από μια ακύρωση.
-
-## Ροή Προγράμματος
-
-1. **Αρχικοποίηση Πελάτη**: Οι πελάτες εκκινούν την εφαρμογή TheaterClient, καθορίζοντας εντολές και παραμέτρους.
-2. **Διαχείριση Θέσεων**:
-   - Οι πελάτες μπορούν να δουν τις διαθέσιμες θέσεις.
-   - Οι πελάτες μπορούν να κάνουν κράτηση θέσεων παρέχοντας τον τύπο, τον αριθμό και το όνομά τους.
-   - Οι πελάτες μπορούν να δουν τις κρατήσεις τους.
-   - Οι πελάτες μπορούν να ακυρώσουν τις κρατήσεις τους, με την επιλογή να εγγραφούν για ειδοποιήσεις εάν λάβουν μήνυμα αποτυχίας κατά την κράτηση.
-3. **Επεξεργασία Διακομιστή**: Ο TheaterServer διαχειρίζεται τη διαδικασία κρατήσεων, ενημερώνει τις διαθέσιμες θέσεις και επικοινωνεί με το RMI registry.
-4. **Ειδοποιήσεις**: Όταν μια θέση ακυρωθεί, όλοι οι εγγεγραμμένοι πελάτες λαμβάνουν άμεσες ειδοποιήσεις.
-
-## Απαιτήσεις
-
-- **Java Development Kit (JDK)**: Βεβαιωθείτε ότι έχετε εγκαταστήσει το JDK 8 ή νεότερο.
-- **RMI Registry**: Ο RMI registry πρέπει να είναι σε λειτουργία στον καθορισμένο υπολογιστή.
-- **Java Libraries**: Βεβαιωθείτε ότι το περιβάλλον Java υποστηρίζει το RMI.
-
-## Εγκατάσταση & Χρήση
-
-### 1. Κλωνοποίηση του Αποθετηρίου
-Κατεβάστε το αποθετήριο στον τοπικό σας υπολογιστή:
-```
-git clone https://github.com/Distributed-Systems-aka-Uniwa/RMI.git
-```
-### 2. Μεταγλώττιση των Κλάσεων
-Μεταγλωττίστε τις κλάσεις Java χρησιμοποιώντας την παρακάτω εντολή:
-```
-javac *.java
-```
-### 3. Εκκίνηση του RMI Registry
-Ξεκινήστε το RMI registry σε ένα τερματικό:
-```
-rmiregistry
-```
-### 4. Εκκίνηση του Θεατρικού Διακομιστή
-Σε ένα νέο τερματικό, ξεκινήστε τον THServer:
-```
-java THServer
-```
-### 5. Εκκίνηση του Θεατρικού Πελάτη
-Ανοίξτε πολλαπλά τερματικά για να τρέξετε τον πελάτη για τη δοκιμή πολλών χρηστών:
-```
-java THClient
-```
-### 6. Οδηγίες Χρήσης
-Για να δείτε τις διαθέσιμες θέσεις:
-```
-java THClient list <hostname>
-```
-Για να κάνετε κράτηση θέσεων:
-```
-java THClient book <hostname> <type> <number> <name>
-```
-Για να δείτε όλες τις κρατήσεις:
-```
-java THClient guests <hostname>
-```
-Για να ακυρώσετε κρατήσεις:
-```
-java THClient cancel <hostname> <type> <number> <name>
-```
+## Open the Documentation
+1. Navigate to the `docs/` directory
+2. Open the report corresponding to your preferred language:
+    - English: `Java-Remote-Method-Invocation.pdf`
+    - Greek: `Απομακρυσμένη-Κλήση-Μεθόδου-Java.pdf`
